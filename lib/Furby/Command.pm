@@ -79,16 +79,16 @@ my $description = {
     '424' => '', #!
     '425' => '', #!
     #...
-    '700' => 'Event: I\'m bored', # does various silly things depending on personality
+    '700' => 'Event: I\'m bored / sleepy', # does various silly things depending on personality
     '701' => 'Event: Burp',
     '702' => 'Event: Chew-chew',
-    '703' => 'Event: You touched my side, you turned me on a side',
+    '703' => 'Event: You touched my head or side, you turned me on a side',
     '704' => 'Event: Fart',
     '705' => 'Event: I woke up!', # sent on Furby wakeup, even before it pronounces the 'Good morning' phrase
-    '706' => 'Event: (?)', # sent at random when Furby is idle (like ping, or searching for other Furbys?)
-    '707' => 'Event: (?)', # sent at random when Furby is idle (like ping, or searching for other Furbys?)
-    '708' => '', #  speech: dang-dang-dang-da....
-    '709' => '', #  speech: bo-ga-di-di-do ... dang-dang-dang-da....
+    '706' => 'Event: (?)', # sent at random when Furby is idle (like ping, or searching for other Furbys?). Responds with '721'
+    '707' => 'Event: (?)', # sent at random when Furby is idle (like ping, or searching for other Furbys?). Responds with '722'
+    '708' => 'Event: (?)', #  speech: dang-dang-dang-da..... Responds with '723'
+    '709' => 'Event: (?)', #  speech: bo-ga-di-di-do ... dang-dang-dang-da..... Responds with '724'
     '710' => 'Event: Me happy (also when head or back is touched)',
     '711' => 'Event: cough-cough-cough',
     '712' => 'Event: Me hungry! / Kah Ay-tay!',
@@ -100,32 +100,35 @@ my $description = {
     '718' => 'Event: Yawn (I\'m going to sleep) / As command: Yawn!', # when sent as a command, will yawn / sent automatically twice when Furby is going into deep sleep mode
     '719' => 'Event: Whisper, whisper, he-he-he',
     '720' => '', #  something he dislikes, "uh oh kaa tee, do?"
-    '721' => '', #!
-    '722' => '', #!
-    '723' => '', #!
-    '724' => '', #!
+    '721' => 'Event: got a command 706 (plus sings a song); as command: sing that song', #! handshake?
+    '722' => 'Event: got a command 707 (plus sings a song); as command: sing that song', #! handshake?
+    '723' => 'Event: got a command 708 (plus sings a song); as command: sing that song', #! handshake?
+    '724' => 'Event: got a command 709 (plus sings a song); as command: sing that song', #! handshake?
     #...
     '760' => '', #  "love friend, nay nay noo la"
-    '761' => '', #  day-dee
-    '762' => '', #  "meila koo mei ta, meila koo mei ta like mua, mua" (kiss)
-    '763' => '', #  "ka tulu ata, ata, ata, ata " (song)
-    '764' => '', #  witi wati to to, blah blah blah blah blah, blah (song)
-    '765' => '', #  "(fart) oh-ho-ho, tu lu li ku"
+    '761' => '', #  "day-dee"
+    '762' => '', #  "meila koo mei ta, meila koo mei ta, like mua, mua, mua" (kiss)
+    '763' => '', #  "ka tulu ata, ata, ata, ata" (song)
+    '764' => '', #  "witi wati to to, blah blah blah blah blah, blah" (song)
+    '765' => '', #  "(fart) oh-ho-ho, tu lu li ku!"
     '766' => '', #  "boda tei ta eу ku, shaa!"
     #...
-    '790' => '', #  "ee day do lay lo la!"
-    '791' => '', #  "u nai bo li day"
+    '780' => 'Event: I\'ve got command 790',
+    '781' => 'Event: I\'ve got command 791',
+    #...
+    '790' => '', #  "ee day do lay lo la!". Responds with '780'
+    '791' => '', #  "u nai bo li day". Responds with '781'
     #...
     '813' => 'Request: What\'s your personality?', #! used to initate handshake step 1 and get the current personality type
     #...
-    '820' => 'Hypnotize for 1 minute', #! this command is sent by iOS app immediately on application start and every 40 seconds
+    '820' => 'Hypnotize for 1 minute', #! this command is sent by iOS app immediately on application start and every 40 seconds. Responds with current character type (90x).
     #...
     '830' => '', #!
     '831' => '', #
     '832' => '', #!
     #...
     '850' => '', #  "yeah mi mi be day mu ha ha", "yeah, yeah, yeah! oh yeah yeah!"
-    '851' => '', #  "mmm, ka tulu, me like"
+    '851' => '', #  "mmm, ka tulu, me like", "haa"
     '852' => '', #  "oh-oh-oh-oh!", "dude, no!"
     '853' => '', #  "grrrh ko ko" something he dislikes
     '854' => '', #  "grrrh ko ko", "ka bu ku do"
@@ -157,7 +160,7 @@ my $description = {
     '880' => '', #! motion (dislike)
     '881' => '', # "oh-hoo ha-ha" (or "ha-haa" like something scary or hot)
     '882' => '', #! "ah ha me bee dey, nice good!", purr
-    '883' => '', #  tasty: "mmm, yum"
+    '883' => '', #  tasty: "mmm, yum", "ha haa!"
     '884' => '', #  not tasty (vomit-like)
     '885' => '', #  "oooh"
     '886' => '', #  "chew chew ooh"
